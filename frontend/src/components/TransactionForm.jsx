@@ -85,7 +85,7 @@ function TransactionForm({ route, method }) {
         <label htmlFor="date">Date:</label>
         <br />
         <input
-          type="text"
+          type="date"
           id="date"
           required
           onChange={(e) => setDate(e.target.value)}
