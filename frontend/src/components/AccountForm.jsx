@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import api from "../api";
-import "../styles/Form.css";
-import LoadingIndicator from "./LoadingIndicator";
 import { useNavigate } from "react-router-dom";
+import Account from "../components/Account";
+import "../styles/Form.css";
+import LogoutButton from "../components/LogoutButton";
 
 function AccountForm({ route, method }) {
   const [accounts, setAccounts] = useState([]);
