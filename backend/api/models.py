@@ -7,7 +7,7 @@ class Account(models.Model):
     account_holder = models.ForeignKey(
         User,
         on_delete=models.CASCADE, # Deletes all accounts made by account_holder if account_holder is deleted
-        related_name="notes" # Names the group of accounts made by the same account_holder
+        related_name="accounts" # Names the group of accounts made by the same account_holder
     )
 
     def __str__(self):
