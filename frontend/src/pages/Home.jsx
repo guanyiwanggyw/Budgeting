@@ -10,7 +10,6 @@ function Home() {
   const [accounts, setAccounts] = useState([]);
   const [balance, setBalance] = useState("");
   const [name, setName] = useState("");
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -79,7 +78,9 @@ function Home() {
         <label htmlFor="balance">Balance:</label>
         <br />
         <input
-          type="number"
+          type="text"
+          inputmode="numeric"
+          pattern="^\d*(\.\d{0,2})?$"
           id="balance"
           step="0.01"
           required
