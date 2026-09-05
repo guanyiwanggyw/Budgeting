@@ -8,7 +8,11 @@ import LogoutButton from "../components/LogoutButton";
 import AccountForm from "../components/AccountForm";
 
 function Home() {
-  <AccountForm />;
+  return (
+    <div>
+      <AccountForm />
+    </div>
+  );
 }
 
 export default Home;
