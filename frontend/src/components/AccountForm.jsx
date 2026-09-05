@@ -3,7 +3,6 @@ import api from "../api";
 import { useNavigate } from "react-router-dom";
 import Account from "../components/Account";
 import "../styles/Form.css";
-import LogoutButton from "../components/LogoutButton";
 
 function AccountForm({ route, method }) {
   const [accounts, setAccounts] = useState([]);
@@ -88,7 +87,6 @@ function AccountForm({ route, method }) {
         />
         <input type="submit" value="Submit"></input>
       </form>
-      <LogoutButton />
     </div>
   );
 }

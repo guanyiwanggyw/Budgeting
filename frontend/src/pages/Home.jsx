@@ -11,6 +11,7 @@ function Home() {
   return (
     <div>
       <AccountForm />
+      <LogoutButton />
     </div>
   );
 }
