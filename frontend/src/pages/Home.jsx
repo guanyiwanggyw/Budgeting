@@ -4,17 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { clearAuthTokens } from "../auth";
 import Account from "../components/Account";
 import "../styles/Home.css";
+import LogoutButton from "../components/LogoutButton";
 
 function Home() {
   const [accounts, setAccounts] = useState([]);
   const [balance, setBalance] = useState(0.0);
   const [name, setName] = useState("");
   const navigate = useNavigate();
-
-  const handleLogout = () => {
-    clearAuthTokens();
-    navigate("/login");
-  };
 
   useEffect(() => {
     getAccounts();
@@ -89,11 +85,7 @@ function Home() {
         />
         <input type="submit" value="Submit"></input>
       </form>
-      <div>
-        <button type="button" onClick={handleLogout}>
-          Logout
-        </button>
-      </div>
+      <LogoutButton />
     </div>
   );
 }
