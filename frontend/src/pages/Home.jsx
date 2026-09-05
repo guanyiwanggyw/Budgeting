@@ -8,8 +8,9 @@ import LogoutButton from "../components/LogoutButton";
 
 function Home() {
   const [accounts, setAccounts] = useState([]);
-  const [balance, setBalance] = useState(0.0);
+  const [balance, setBalance] = useState("");
   const [name, setName] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -42,8 +43,10 @@ function Home() {
     api
       .post("/api/accounts/", { balance, name })
       .then((res) => {
-        if (res.status === 201) alert("Account added!");
-        else alert("Failed to add account");
+        if (res.status === 201) {
+          setName("");
+          setBalance("");
+        } else alert("Failed to add account");
         getAccounts();
       })
       .catch((err) => alert(err));
