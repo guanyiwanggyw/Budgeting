@@ -10,5 +10,12 @@ class Account(models.Model):
         related_name="accounts" # Names the group of accounts made by the same account_holder
     )
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["name", "account_holder"],
+                name="unique_account_name_per_holder"
+            )
+        ]
     def __str__(self):
         return self.name
