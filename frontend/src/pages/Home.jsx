@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import api from "../api";
+import Account from "../components/Account";
 import "../styles/Home.css";
+
 function Home() {
     const [accounts, setAccounts] = useState([]);
     const [balance, setBalance] = useState(0.0);
@@ -44,6 +46,13 @@ function Home() {
         <div>
             <div>
                 <h2>Accounts</h2>
+                {accounts.map((account) => (
+                    <Account
+                        account={account}
+                        onDelete={deleteAccount}
+                        key={account.id}
+                    />
+                ))}
             </div>
             <h2>Add an account</h2>
             <form onSubmit={createAccount}>
