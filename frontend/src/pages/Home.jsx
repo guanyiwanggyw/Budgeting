@@ -6,11 +6,13 @@ import Account from "../components/Account";
 import "../styles/Home.css";
 import LogoutButton from "../components/LogoutButton";
 import AccountForm from "../components/AccountForm";
+import TransactionForm from "../components/TransactionForm";
 
 function Home() {
   return (
     <div>
       <AccountForm />
+      <TransactionForm />
       <LogoutButton />
     </div>
   );
