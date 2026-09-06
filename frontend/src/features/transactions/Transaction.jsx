@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Account.css"; // Temporarily transactions will use the same .css as account
+import "../../styles/Account.css"; // Temporarily transactions will use the same .css as account
 
 function Transaction({ transaction, onDelete }) {
   /*

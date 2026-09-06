@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Account.css";
+import "../../styles/Account.css";
 
 function Account({ account, onDelete }) {
   return (

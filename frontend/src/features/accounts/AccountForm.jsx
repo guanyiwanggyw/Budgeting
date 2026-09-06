@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import api from "../api";
 import { useNavigate } from "react-router-dom";
-import Account from "../components/Account";
-import "../styles/Form.css";
+import api from "../../services/api";
+import Account from "./Account";
+import "../../styles/Form.css";
 
 function AccountForm({ route, method }) {
   const [accounts, setAccounts] = useState([]);

@@ -1,4 +1,4 @@
-import Form from "../components/Form";
+import LoginAndRegisterForm from "../components/LoginAndRegisterForm";
 
 function Login() {
   return <Form route="/api/token/" method="login" />;

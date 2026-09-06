@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import api from "../api";
 import { useNavigate } from "react-router-dom";
-import { clearAuthTokens } from "../auth";
-import Account from "../components/Account";
-import "../styles/Home.css";
+import api from "../services/api";
+import { clearAuthTokens } from "../services/auth";
+import Account from "../features/accounts/Account";
 import LogoutButton from "../components/LogoutButton";
-import AccountForm from "../components/AccountForm";
-import TransactionForm from "../components/TransactionForm";
+import AccountForm from "../features/accounts/AccountForm";
+import TransactionForm from "../features/transactions/TransactionForm";
+import "../styles/Home.css";
 
 function Home() {
   return (

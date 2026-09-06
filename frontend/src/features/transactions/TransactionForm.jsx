@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import api from "../api";
 import { useNavigate } from "react-router-dom";
-import Transaction from "../components/Transaction";
-import "../styles/Form.css";
+import api from "../../services/api";
+import Transaction from "./Transaction";
+import "../../styles/Form.css";
 
 function TransactionForm() {
   const [transactions, setTransactions] = useState([]);
