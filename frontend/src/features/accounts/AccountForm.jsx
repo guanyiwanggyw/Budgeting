@@ -77,7 +77,7 @@ function AccountForm({ route, method }) {
         <br />
         <input
           type="text"
-          inputmode="numeric"
+          inputMode="numeric"
           pattern="^\d*(\.\d{0,2})?$"
           id="balance"
           step="0.01"
