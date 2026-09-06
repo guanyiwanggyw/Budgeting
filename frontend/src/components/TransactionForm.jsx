@@ -94,6 +94,7 @@ function TransactionForm() {
         <label htmlFor="type">Type:</label>
         <br />
         <select
+          className="form-select"
           name="type"
           id="type"
           required
@@ -151,7 +152,7 @@ function TransactionForm() {
 
         <label htmlFor="note">Note:</label>
         <br />
-        <input
+        <textarea
           type="text"
           id="note"
           required
