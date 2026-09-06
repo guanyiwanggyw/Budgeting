@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Transaction from "../components/Transaction";
 import "../styles/Form.css";
 
-function TransactionForm({ route, method }) {
+function TransactionForm() {
   const [transactions, setTransactions] = useState([]);
   const [date, setDate] = useState("");
   const [type, setType] = useState("");
@@ -31,7 +31,7 @@ function TransactionForm({ route, method }) {
 
   const deleteTransaction = (id) => {
     api
-      .delete(`/api/transaction/delete/${id}/`)
+      .delete(`/api/transactions/delete/${id}/`)
       .then((res) => {
         if (res.status === 204) alert("Transaction was deleted");
         else alert("Failed to delete transaction!");
@@ -93,21 +93,27 @@ function TransactionForm({ route, method }) {
         />
         <label htmlFor="type">Type:</label>
         <br />
-        <input
-          type="text"
+        <select
+          name="type"
           id="type"
           required
-          onChange={(e) => setType(e.target.value)}
           value={type}
-        />
+          onChange={(e) => setType(e.target.value)}
+        >
+          <option value="">Select a type</option>
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+          <option value="transfer">Transfer</option>
+        </select>
+        <br />
 
         <label htmlFor="amount">Amount:</label>
         <br />
         <input
           type="text"
-          inputmode="numeric"
+          inputMode="numeric"
           pattern="^\d*(\.\d{0,2})?$"
-          id="balance"
+          id="amount"
           required
           onChange={(e) => setAmount(e.target.value)}
           value={amount}
